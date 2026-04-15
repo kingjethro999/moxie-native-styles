@@ -91,6 +91,42 @@ export default function Welcome() {
 }
 ```
 
+## Primitives (`<Box>`, `<Text>`, `<Flex>`)
+
+Moxie Primitives allow you to write UI using Moxie style keys directly as props.
+
+```tsx
+import { Box, Text, Flex, Button } from 'moxie-native-styles';
+
+export default function PremiumScreen() {
+  return (
+    <Box flex1 bgBackground p4 center>
+      <GlassCard p6 rounded2xl>
+         <Text fontBold text3xl mb2>Hello Primitives</Text>
+         <Flex gap4 itemsCenter>
+            <Box bgBlue100 roundedFull p2><Icon name="info" /></Box>
+            <Text textMuted>This layout is built with props!</Text>
+         </Flex>
+         <Button label="Get Started" mt6 roundedFull />
+      </GlassCard>
+    </Box>
+  );
+}
+```
+
+## Responsive Styles
+
+Config your breakpoints once:
+
+```ts
+// moxie.config.ts
+export default defineMoxieConfig({
+  breakpoints: { sm: 640, md: 768, lg: 1024 }
+});
+```
+
+Moxie automatically recalculates styles on device rotation or resize.
+
 ## License
 
 MIT

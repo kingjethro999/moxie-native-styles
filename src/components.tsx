@@ -10,11 +10,16 @@ import {
   ViewStyle
 } from 'react-native';
 import { useMoxie } from './hooks';
+import { MoxieStyles } from './types';
 
-type MoxieStyleKeys = any; // In real usage, this would be keyof MoxieStyles
+/**
+ * Base props derived from the 900+ Moxie style tokens.
+ * This enables boolean props like <Box flex1 bgPrimary p4 /> with full autocomplete.
+ */
+type MoxieBaseProps = Partial<Record<keyof MoxieStyles, boolean>>;
 
-interface BaseMoxieProps {
-  [key: string]: any;
+interface BaseMoxieProps extends MoxieBaseProps {
+  [key: string]: any; // Fallback for dynamic values like p={4}
 }
 
 const extractMoxieStyles = (props: any, s: any) => {
