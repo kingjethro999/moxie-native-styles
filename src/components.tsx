@@ -3,9 +3,11 @@ import {
   View, 
   Text as RNText, 
   Pressable as RNPressable, 
+  Image,
   ViewProps, 
   TextProps, 
   PressableProps,
+  ImageProps,
   StyleProp,
   ViewStyle
 } from 'react-native';
@@ -87,5 +89,28 @@ export const Button: React.FC<PressableProps & BaseMoxieProps & { label?: string
     >
       {label ? <RNText style={[s.textWhite, s.fontSemibold, labelStyle]}>{label}</RNText> : props.children}
     </RNPressable>
+  );
+};
+
+export const Avatar: React.FC<ImageProps & BaseMoxieProps & { size?: 'Xs' | 'Sm' | 'Md' | 'Lg' | 'Xl' | '2xl'; ring?: boolean }> = ({ 
+  style, 
+  size = 'Md', 
+  ring = false,
+  ...props 
+}) => {
+  const { s } = useMoxie();
+  const sizeKey = `avatar${size}`;
+  
+  // Directly use Image with Moxie styles
+  return (
+    <Image 
+      style={[
+        s.avatar, 
+        s[sizeKey], 
+        ring && s.avatarRing,
+        style as any
+      ]} 
+      {...props} 
+    />
   );
 };

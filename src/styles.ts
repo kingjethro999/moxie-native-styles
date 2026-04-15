@@ -245,6 +245,14 @@ export function generateStyles(tokens: Required<Omit<MoxieConfig, 'platformIos' 
   s.input = { borderWidth: 1, borderColor: borderCol, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, fontSize: 14, backgroundColor: bg };
   s.badge = { paddingHorizontal: 8, paddingVertical: 2, borderRadius: 9999, fontSize: 10, fontWeight: '600' };
   s.avatar = { borderRadius: 9999, overflow: 'hidden', backgroundColor: HEX_COLORS.gray200 };
+  s.avatarXs = { ...s.avatar, width: 24, height: 24 };
+  s.avatarSm = { ...s.avatar, width: 32, height: 32 };
+  s.avatarMd = { ...s.avatar, width: 40, height: 40 };
+  s.avatarLg = { ...s.avatar, width: 48, height: 48 };
+  s.avatarXl = { ...s.avatar, width: 64, height: 64 };
+  s.avatar2xl = { ...s.avatar, width: 96, height: 96 };
+  s.avatarRing = { borderWidth: 2, borderColor: tokens.primary };
+
   s.divider = { height: 1, borderBottomWidth: 1, borderBottomColor: borderCol, marginVertical: 8 };
   s.skeletonRound = { backgroundColor: HEX_COLORS.gray200, borderRadius: 9999 };
 
