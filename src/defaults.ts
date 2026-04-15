@@ -177,4 +177,12 @@ export const defaultTokens: Required<Omit<MoxieConfig, 'platformIos' | 'platform
   opacity90: 0.9,
   opacity95: 0.95,
   opacity100: 1,
+  
+  // Breakpoints
+  breakpoints: {
+    sm: 640,
+    md: 768,
+    lg: 1024,
+    xl: 1280,
+  },
 };

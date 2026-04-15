@@ -246,7 +246,26 @@ export function generateStyles(tokens: Required<Omit<MoxieConfig, 'platformIos' 
   s.badge = { paddingHorizontal: 8, paddingVertical: 2, borderRadius: 9999, fontSize: 10, fontWeight: '600' };
   s.avatar = { borderRadius: 9999, overflow: 'hidden', backgroundColor: HEX_COLORS.gray200 };
   s.divider = { height: 1, borderBottomWidth: 1, borderBottomColor: borderCol, marginVertical: 8 };
-  s.skeleton = { backgroundColor: HEX_COLORS.gray200, borderRadius: 8 };
+  s.skeletonRound = { backgroundColor: HEX_COLORS.gray200, borderRadius: 9999 };
+
+  // --- Glassmorphism ---
+  s.glass = {
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.3)',
+    ...s.shadowSm,
+  };
+  s.glassDark = {
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+    ...s.shadowSm,
+  };
+  s.glassPrimary = {
+    backgroundColor: tokens.primary + '33', // 20% opacity
+    borderWidth: 1,
+    borderColor: tokens.primary + '66', // 40% opacity
+  };
 
   return s;
 }

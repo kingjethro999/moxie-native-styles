@@ -152,13 +152,22 @@ export interface MoxieConfig {
   platformIos?: Partial<MoxieConfig>;
   platformAndroid?: Partial<MoxieConfig>;
   platformWeb?: Partial<MoxieConfig>;
+
+  // Breakpoints
+  breakpoints?: {
+    sm?: number;
+    md?: number;
+    lg?: number;
+    xl?: number;
+  };
 }
 
 export type MoxieStyles = Record<string, ViewStyle | TextStyle | ImageStyle>;
 
 export interface MoxieContextType {
   s: MoxieStyles;
-  tokens: Required<Omit<MoxieConfig, 'platformIos' | 'platformAndroid' | 'platformWeb'>>;
+  tokens: Required<Omit<MoxieConfig, 'platformIos' | 'platformAndroid' | 'platformWeb' | 'breakpoints'>>;
   platform: 'ios' | 'android' | 'web';
   darkMode: boolean;
+  width: number;
 }
