@@ -66,6 +66,31 @@ export default function MyComponent() {
 }
 ```
 
+## Animations (Subtle & Smooth)
+
+Moxie comes with built-in declarative animations that use your theme tokens for duration and easing.
+
+```tsx
+import { FadeIn, SlideIn, Pulse, Float, useMoxie } from 'moxie-native-styles';
+
+export default function Welcome() {
+  const { s } = useMoxie();
+  
+  return (
+    <SlideIn direction="up">
+      <View style={[s.card]}>
+        <Pulse>
+          <Text style={[s.textBlue600]}>New Feature!</Text>
+        </Pulse>
+        <FadeIn delay={300}>
+          <Text style={[s.textMuted]}>Try out our new dashboard.</Text>
+        </FadeIn>
+      </View>
+    </SlideIn>
+  );
+}
+```
+
 ## License
 
 MIT
