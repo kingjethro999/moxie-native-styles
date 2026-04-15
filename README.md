@@ -127,6 +127,42 @@ export default defineMoxieConfig({
 
 Moxie automatically recalculates styles on device rotation or resize.
 
+## Toasts (`toast.success()`)
+
+Moxie includes a beautiful, Sonner-inspired toast system with **built-in (follow come) Lucide icons**.
+
+### 1. Add the Container
+Place the `<ToastContainer />` at the root of your app.
+
+```tsx
+import { Moxie, ToastContainer } from 'moxie-native-styles';
+
+export default function App() {
+  return (
+    <Moxie config={config}>
+      <YourApp />
+      <ToastContainer position="bottom-right" />
+    </Moxie>
+  );
+}
+```
+
+### 2. Show Toasts Anywhere
+No hooks required for the basic API!
+
+```tsx
+import { toast } from 'moxie-native-styles';
+
+// Simple usage
+toast.show("Welcome back!");
+
+// Semantic toasts with icons
+toast.success("Profile updated");
+toast.error("Connection failed");
+toast.warning("Low battery");
+toast.info("New message received");
+```
+
 ## License
 
 MIT

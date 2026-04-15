@@ -6,3 +6,4 @@ export * from './defaults';
 export * from './styles';
 export * from './animations';
 export * from './components';
+export * from './toast';
