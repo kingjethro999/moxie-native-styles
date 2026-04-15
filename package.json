@@ -2,7 +2,21 @@
   "name": "moxie-native-styles",
   "version": "0.1.5",
   "license": "MIT",
-  "description": "900+ predefined styles for React Native — configured once, applied everywhere.",
+  "description": "900+ predefined styles for React Native \u2014 configured once, applied everywhere.",
+  "keywords": [
+    "react-native",
+    "react",
+    "styling",
+    "utility-first",
+    "design-system",
+    "moxie",
+    "styles",
+    "ui-kit",
+    "zero-runtime",
+    "typescript",
+    "toast",
+    "animations"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -10,8 +24,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx --format cjs,esm --dts --clean",
-    "dev": "tsup src/index.tsx --format cjs,esm --watch --dts",
+    "build": "node api.js && tsup src/index.tsx --format cjs,esm --dts --clean",
+    "dev": "node api.js && tsup src/index.tsx --format cjs,esm --watch --dts",
     "lint": "eslint src"
   },
   "peerDependencies": {
