@@ -1,6 +1,7 @@
 {
   "name": "moxie-native-styles",
   "version": "0.1.5",
+  "license": "MIT",
   "description": "900+ predefined styles for React Native — configured once, applied everywhere.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
